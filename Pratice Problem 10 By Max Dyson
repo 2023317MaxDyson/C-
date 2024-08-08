@@ -1,0 +1,24 @@
+/* Question 8 */
+
+#include <iostream>
+using namespace std;
+
+
+ int main() {
+  int x = 5, y = 3, *p = &x, *q = &y;
+  /*  x = 5 and y = 3  */
+  cout << "x = " << x << ", y = " << y << ", q = " << *q <<'\n';
+  /* x is equal to the value of y.  x = 3 and y does not change */
+  x = y;
+  cout << "x = " << x << ", y = " << y << '\n';
+  /*  Changes int x's value from 5 to 7 ,  x = 7   and y does not change */
+  x = 7;
+  cout << "x = " << x << ", y = " << y << '\n';
+  /*   Pointer p = 10   x = 10 and y does not change   */
+  *p = 10;
+  cout << "x = " << x << ", y = " << y << '\n';
+  /* Pointer p equals to pointer q. Pointer q = 20, y = 20 */
+  p = q;
+  *p = 20;
+  cout << "x = " << x << ", y = " << y << ", p = " << *p << '\n';
+}      
