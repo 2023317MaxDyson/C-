@@ -1,0 +1,29 @@
+
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+string getUpperCaseWord(string w) {
+  for (int i = 0; i < w.length(); i++) {
+    w[i] = toupper(w[i]);
+  }
+  return w;
+}
+
+int main() {
+  string str, w;
+  cout << "Enter a sentence: " << endl;
+  getline(cin, str);
+  cout << "Enter a search word: " << endl;
+  getline(cin, w);
+  int pos = str.find(w); // find substring's first occurrence
+  string upperWord = getUpperCaseWord(w);
+  cout << pos;
+  if (pos != -1) {
+    str = str.substr(0, pos) + upperWord + str.substr(pos + w.length());
+  }
+  cout << str;
+
+  return 0;
+}
